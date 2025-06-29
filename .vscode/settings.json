@@ -1,0 +1,10 @@
+{
+    "files.autoSave": "onFocusChange",
+    "files.trimTrailingWhitespace": true,
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": true,
+    "python.analysis.typeCheckingMode": "standard",
+    "python.analysis.extraPaths": [
+        "./python"
+    ]
+}

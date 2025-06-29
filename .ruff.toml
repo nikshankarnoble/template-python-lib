@@ -1,0 +1,51 @@
+# File exclusions.
+exclude = [
+    "package.py",  # Rez package configuration file.
+    "rezbuild.py",  # Rez build script.
+]
+
+# Same as Black.
+line-length = 88
+indent-width = 4
+
+# Ensure that the code is compatible with Python 3.9.
+target-version = "py39"
+
+[lint]
+select = ["ALL"]
+ignore = [
+    # flake8-commas
+    "COM812",  # Ignore missing trailing commas, this clashes with the formatter.
+
+    # pydocstyle
+    "D100",  # Undocumented public module.
+    "D104",  # Undocumented public package.
+    "D200",  # One-line docstring should fit on one line.
+    "D205",  # 1 blank line required between summary line and description.
+    "D212",  # Multi-line docstring summary should start at the second line.
+    "D401",  # First line should be in imperative mood - disabled for Google style.
+    "D413",  # Missing blank line after last section.
+
+    # flake8-errmsg
+    "EM102",  # f-string present in exception message.
+
+    # isort
+    "I001",  # Disable isort enforcement.
+
+    # flake8-todos-td
+    "TD002", # Missing TODO author.
+    "TD003",  # Missing TODO link.
+
+    # tryceratops
+    "TRY003",  # Long exception message provided outside of the class definition.
+]
+
+[lint.per-file-ignores]
+
+# Specific rule exclusions for tests.
+"tests/**/*.py" = [
+    "ANN201", # Require return type annotations.
+    "E402",  # Import not at top of file.
+    "S101",  # Use of `assert` statements.
+    "FBT001", # Boolean-typed positional argument in function definition
+]
